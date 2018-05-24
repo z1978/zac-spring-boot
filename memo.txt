@@ -1,0 +1,157 @@
+gradle
+spring boot
+bootstrap
+
+Web: MVCフレームワーク（Spring MVC）
+Thymeleaf: テンプレートエンジン
+JPA: O/Rマッパー
+H2: インメモリDB
+
+
+https://gradle.org/install/
+# install sdk
+curl -s "https://get.sdkman.io" | bash
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+sdk version
+# install cradle
+java -version
+sdk install gradle 4.7
+brew install gradle
+gradle -v
+
+gradle init --type java-library
+gradle eclipse
+gradle clean compileJava
+
+
+doma-gen-build.xml
+右クリック⇒Run As⇒Ant Build
+
+
+STSにプロジェクトをインポート
+workspace直下にgit clone。リポジトリ：https://github.com/z1978/zac-spring-boot.git
+git clone https://github.com/z1978/zac-spring-boot.git
+Package Explorerで右クリ→import→Gradle→Existing Gradle Project→zac-spring-bootを選択
+git config設定。下記参照
+SSHキーの設定。下記参照
+Domaの設定
+	(1)プロジェクト右クリ→Properties→Annotation Processingを選択肢、下図のようにチェック
+	dao.subpackage	impl
+	dao.suffix	Impl
+	debug	false
+	http://doma.seasar.org/reference/apt.html#Eclipse%E3%81%A7%E3%81%AE%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3%E6%8C%87%E5%AE%9A
+	(2)Factory Pathに/zac-spring-boot/lib/doma-2.16.1.jarをインポート
+
+
+保存時のアクションの設定
+	java→Editor→Save Actions
+	
+
+----------------------------------------------------------------------------------------------------
+FAILURE: Build failed with an exception.
+
+* Where:
+Build file 'C:\dev\workspace-sts\zac-spring-boot\build.gradle' line: 18
+
+* What went wrong:
+A problem occurred evaluating root project 'zac-spring-boot'.
+> Failed to apply plugin [id 'org.springframework.boot']
+   > Spring Boot plugin requires Gradle 4.0 or later. The current version is Gradle 3.5.1
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+https://better-coding.com/solved-spring-boot-plugin-requires-gradle-4-0-or-later-the-current-version-is-gradle-x-x/
+gradle-wrapper.properties
+distributionUrl=https\://services.gradle.org/distributions/gradle-4.6-bin.zip
+----------------------------------------------------------------------------------------------------
+
+
+
+
+spring boot サンプル
+https://qiita.com/rubytomato@github/items/e4fda26faddbcfd84d16
+https://qiita.com/ewai/items/f375d562744502d79790
+http://inaz2.hatenablog.com/entry/2017/04/05/200206
+https://www.qoosky.io/techs/2496c58738
+http://blog.enjoyxstudy.com/entry/2016/12/10/000000
+
+EclipseのGradleプロジェクト作成方法比較
+https://qiita.com/grachro/items/d1ebad3857a794895426
+
+
+Continuous Integration Server
+持续集成服务器
+CIサーバーとは、CI（継続的インテグレーション）を実行するためのサーバーのことである。
+
+https://github.com/Qkyrie/spring-thymeleaf-example
+
+https://www.marineroad.com/staff-blog/17070.html
+
+
+
+application.properties
+
+server.session.persistent=true
+
+Spring Boot学习记录(二)–thymeleaf模板
+https://blog.csdn.net/u012706811/article/details/52185345
+
+Gradle使い方メモ
+https://qiita.com/opengl-8080/items/4c1aa85b4737bd362d9e
+
+
+[Java] Spring BootでThymeleafを使ってみよう！（基本編）
+https://www.marineroad.com/staff-blog/17070.html
+https://github.com/MrMTakada/BLG_SpringBoot
+
+Eclipse 上から新規プロジェクトを Github に Push する方法
+https://qiita.com/cotrpepe/items/7cafaacb538425a78f1f
+
+thymeleafの基本的な記法を覚える その3
+http://tm8r.hateblo.jp/entry/20121011/1349957157
+
+SpringBootをEclipse、Gradleで使ってみる　－　（６）JPAでDB（MySQL）につなごう！
+http://azuki-milk.hatenablog.com/entry/2015/02/02/163624
+
+Spring Data RESTでMySQLにアクセス
+https://qiita.com/quwahara/items/4bfc3da62bd3a6c94e2a
+
+
+Spring Boot如何使用Spring Security进行安全控制
+https://blog.csdn.net/hj7jay/article/details/51730284
+
+Spring Bootで認証を行う方法
+https://qiita.com/nvtomo1029/items/8827d95327b647a6cf50
+
+Spring Boot + Spring Security + Thymeleaf example
+http://www.mkyong.com/spring-boot/spring-boot-spring-security-thymeleaf-example/
+
+Doma2のgenで自動生成を行う
+http://m-shige1979.hatenablog.com/entry/2017/01/04/080000
+
+Spring Boot + Domaによる”新”スーパーアジャイルなWeb開発
+https://qiita.com/cacarrot/items/f5e7511928302452b1dc
+
+開発環境のセットアップ方法と基本的なデータベースアクセスの実行方法を紹介します。
+http://doma.readthedocs.io/ja/stable/getting-started/#eclipse-doma-tools
+
+Spring BootでWARに含めるapplication.propertiesを環境ごとにビルド時に切り替える
+https://qiita.com/NagaokaKenichi/items/b6c42547abbf3c0aecf5
+
+Spring Bootで環境ごとに設定をわける方法 - Qiita
+https://qiita.com/mitsuya/items/cd129bac3d99e9fe98b2
+
+SpringBoot javax.management.InstanceNotFoundException
+https://blog.csdn.net/Tracycater/article/details/79321952
+[Spring Boot]起動時に「DAOが見つからない」エラーが出る
+https://teratail.com/questions/107415
+
+使用bcryptjs对密码加密时，其校验原理是怎样的？
+https://blog.csdn.net/u013810234/article/details/77053011
+http://www.tekboy.net/bcrypt-calculator
+http://www.casleyconsulting.co.jp/blog-engineer/java/%E3%80%90java-se-8%E9%99%90%E5%AE%9A%E3%80%91%E5%AE%89%E5%85%A8%E3%81%AA%E3%83%91%E3%82%B9%E3%83%AF%E3%83%BC%E3%83%89%E3%82%92%E7%94%9F%E6%88%90%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95/
+
+
+https://github.com/satoshi-murakumo/jax-rs-example/blob/master/ext/doma-gen/doma-gen-build.xml
+
+https://funretro.github.io/distributed/#d64faa25-5d70-4965-8097-1f74a6923dd2

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration>
+<configuration>
+
+	<include resource="org/springframework/boot/logging/logback/base.xml" />
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<Target>System.out</Target>
+		<encoder>
+			<pattern>%d{ISO8601,Asia/Tokyo} [%thread] %-5level %logger{36} - %msg
+				-%n</pattern>
+		</encoder>
+	</appender>
+	<appender name="FILE_ALERT"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>./logs/error.log</file>
+		<!-- datebased -->
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>./logs/error_%d{yyyy-MM-dd}.log</fileNamePattern>
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+		<!-- sizetrigger -->
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<fileNamePattern>./logs/error_%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<maxFileSize>10MB</maxFileSize>
+			<maxHistory>60</maxHistory>
+			<totalSizeCap>20GB</totalSizeCap>
+		</rollingPolicy>
+		<filter class="ch.qos.logback.classic.filter.LevelFilter"><!-- error -->
+			<level>ERROR</level>
+			<onMatch>ACCEPT</onMatch>
+			<onMismatch>DENY</onMismatch>
+		</filter>
+		<encoder>
+			<pattern>%-30(%d{HH:mm:ss.SSS} [%thread]) %-5level %logger{32} -
+				%msg%n</pattern>
+		</encoder>
+	</appender>
+	<turboFilter class="ch.qos.logback.classic.turbo.MarkerFilter">
+		<Marker>PROFILER</Marker>
+		<OnMatch>ACCEPT</OnMatch>
+	</turboFilter>
+	<logger name="zac.com">
+		<appender-ref ref="FILE_ALERT" />
+	</logger>
+
+	<root level="DEBUG">
+		<appender-ref ref="STDOUT" />
+	</root>
+
+
+</configuration>
