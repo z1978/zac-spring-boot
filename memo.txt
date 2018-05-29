@@ -30,7 +30,12 @@ doma-gen-build.xml
 
 STSにプロジェクトをインポート
 workspace直下にgit clone。リポジトリ：https://github.com/z1978/zac-spring-boot.git
+
 git clone https://github.com/z1978/zac-spring-boot.git
+
+$ git checkout -b feature/login
+$ git branch --set-upstream-to=master feature/login
+
 Package Explorerで右クリ→import→Gradle→Existing Gradle Project→zac-spring-bootを選択
 git config設定。下記参照
 SSHキーの設定。下記参照
