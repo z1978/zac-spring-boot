@@ -27,21 +27,16 @@
 		<fileset dir="lib" />
 		<fileset dir="${projectDir}/document/lib" includes="*.jar" />
 	</path>
-	<!-- task -->
+
 	<taskdef name="gen" classname="org.seasar.doma.extension.gen.task.Gen" classpathref="classpath" loaderref="loader" />
-	<!-- type -->
 	<typedef name="entityConfig" classname="org.seasar.doma.extension.gen.task.EntityConfig" loaderref="loader" />
 	<typedef name="daoConfig" classname="org.seasar.doma.extension.gen.task.DaoConfig" loaderref="loader" />
 	<typedef name="sqlConfig" classname="org.seasar.doma.extension.gen.task.SqlConfig" loaderref="loader" />
-	<!--
-	<taskdef name="genTest" classname="org.seasar.doma.extension.gen.task.GenTest" loaderref="loader" />
-	<typedef name="sqlTestConfig" classname="org.seasar.doma.extension.gen.task.SqlTestConfig" loaderref="loader" />
-	-->
-	<!-- target -->
+
 	<target name="gen">
 		<gen dialectName="${dialectName}" driverClassName="${driverClassName}" url="${url}" user="${user}" password="${password}" templatePrimaryDir="${projectDir}/document/template">
 			<entityConfig destdir="${javaDestDir}" packageName="${entityPackageName}" />
-			<daoConfig destdir="${javaDestDir}" packageName="${daoPackageName}" />
+			<daoConfig destdir="${javaDestDir}" packageName="${daoPackageName}" configClassName="${configClassName}" />
 			<sqlConfig destdir="${sqlDestDir}" />
 		</gen>
 	</target>

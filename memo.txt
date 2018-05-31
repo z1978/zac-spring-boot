@@ -155,3 +155,9 @@ http://www.casleyconsulting.co.jp/blog-engineer/java/%E3%80%90java-se-8%E9%99%90
 https://github.com/satoshi-murakumo/jax-rs-example/blob/master/ext/doma-gen/doma-gen-build.xml
 
 https://funretro.github.io/distributed/#d64faa25-5d70-4965-8097-1f74a6923dd2
+
+https://ja.osdn.net/projects/je6doma/scm/svn/blobs/head/doma-gen/trunk/doma-gen-build.xml
+
+http://doma-gen.readthedocs.io/ja/stable/gen/
+
+https://github.com/domaframework/doma-gen/tree/master/src/main/resources/org/seasar/doma/extension/gen/template
