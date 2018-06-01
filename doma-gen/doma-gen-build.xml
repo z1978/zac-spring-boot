@@ -39,7 +39,7 @@
 	-->
 	<!-- target -->
 	<target name="gen">
-		<gen dialectName="${dialectName}" driverClassName="${driverClassName}" url="${url}" user="${user}" password="${password}" templatePrimaryDir="${projectDir}/document/template">
+		<gen dialectName="${dialectName}" driverClassName="${driverClassName}" url="${url}" user="${user}" password="${password}" templatePrimaryDir="./template">
 			<entityConfig destdir="${javaDestDir}" packageName="${entityPackageName}" />
 			<daoConfig destdir="${javaDestDir}" packageName="${daoPackageName}" />
 			<sqlConfig destdir="${sqlDestDir}" />
