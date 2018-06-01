@@ -161,3 +161,6 @@ https://ja.osdn.net/projects/je6doma/scm/svn/blobs/head/doma-gen/trunk/doma-gen-
 http://doma-gen.readthedocs.io/ja/stable/gen/
 
 https://github.com/domaframework/doma-gen/tree/master/src/main/resources/org/seasar/doma/extension/gen/template
+
+http://ksby.hatenablog.com/entry/2015/05/05/211711
+
