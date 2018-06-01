@@ -27,7 +27,7 @@ nbdist/
 
 # Java
 *.class
-*.jar
+#*.jar
 *.war
 *.ear
 
